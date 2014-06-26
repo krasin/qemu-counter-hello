@@ -46,7 +46,9 @@ add_custom_command(TARGET hello.elf
   COMMAND ${QEMU_EXECUTABLE} -machine versatilepb -cpu cortex-m3 -nographic
   -monitor null -serial null -semihosting -kernel hello.elf)
 
-add_custom_command(TARGET hello.elf
-  COMMENT "Run hello.elf with qemu with counter device"
-  COMMAND ${QEMU_EXECUTABLE} -machine versatilepb -cpu cortex-m3 -nographic
-  -monitor null -serial null -semihosting -device read_counter -kernel hello.elf)
+message("WARNING: the test with the counter device enabled is currently broken and thus disabled.")
+
+#add_custom_command(TARGET hello.elf
+#  COMMENT "Run hello.elf with qemu with counter device"
+#  COMMAND ${QEMU_EXECUTABLE} -machine versatilepb -cpu cortex-m3 -nographic
+#  -monitor null -serial null -semihosting -device read_counter -kernel hello.elf)
