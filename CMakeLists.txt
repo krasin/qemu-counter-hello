@@ -5,9 +5,8 @@ include(ExternalProject)
 
 ExternalProject_Add(qemu
   PREFIX qemu
-  GIT_REPOSITORY git@github.com:krasin/qemu-counter.git
-  GIT_TAG read_counter
-  CONFIGURE_COMMAND <SOURCE_DIR>/configure --target-list=arm-softmmu
+  GIT_REPOSITORY https://github.com/krasin/qemu-counter-hello
+  CONFIGURE_COMMAND <SOURCE_DIR>/qemu/configure --target-list=arm-softmmu
   INSTALL_COMMAND ""
   )
 
