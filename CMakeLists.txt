@@ -44,10 +44,10 @@ SET(QEMU_EXECUTABLE ${PROJECT_BINARY_DIR}/qemu/src/qemu-build/arm-softmmu/qemu-s
 
 add_custom_command(TARGET hello.elf
   COMMENT "Run hello.elf with qemu without counter device"
-  COMMAND ${QEMU_EXECUTABLE} -cpu cortex-m3 -nographic
+  COMMAND ${QEMU_EXECUTABLE} -machine versatilepb -cpu cortex-m3 -nographic
   -monitor null -serial null -semihosting -kernel hello.elf)
 
 add_custom_command(TARGET hello.elf
   COMMENT "Run hello.elf with qemu with counter device"
-  COMMAND ${QEMU_EXECUTABLE} -cpu cortex-m3 -nographic
+  COMMAND ${QEMU_EXECUTABLE} -machine versatilepb -cpu cortex-m3 -nographic
   -monitor null -serial null -semihosting -device read_counter -kernel hello.elf)
