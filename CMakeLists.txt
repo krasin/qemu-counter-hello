@@ -12,8 +12,8 @@ ExternalProject_Add(qemu
 
 ExternalProject_Add(arm-eabi-toolchain
   PREFIX arm-eabi
-  URL https://sourcery.mentor.com/GNUToolchain/package12774/public/arm-none-eabi/arm-2014.05-28-arm-none-eabi-i686-pc-linux-gnu.tar.bz2
-  URL_MD5 02fc7078af9c9c7e792f026c772374ae
+  URL https://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q1-update/+download//gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2
+  URL_MD5 72b0d06ae16b303c25fd70b2883d3950
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
   INSTALL_COMMAND ""
@@ -33,7 +33,7 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
-SET(CMAKE_C_FLAGS "-g -mcpu=cortex-m3 -mthumb -T generic-m-hosted.ld -std=c99")
+SET(CMAKE_C_FLAGS "-g -mcpu=cortex-m3 -mthumb --specs=rdimon.specs -std=c99")
 SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS)
 
 add_executable(hello.elf hello.c)
